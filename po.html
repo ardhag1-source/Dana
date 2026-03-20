@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT FF - Cheat Injection Tool Free Fire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #00c6ff;
+            --secondary: #0072ff;
+            --dark: #0f172a;
+            --darker: #0a0f1f;
+            --light: #f8fafc;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --purple: #8b5cf6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 198, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: rgba(0, 198, 255, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: rgba(0, 198, 255, 0.15);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-login {
+            background: rgba(0, 198, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(0, 198, 255, 0.3);
+        }
+
+        .btn-login:hover {
+            background: rgba(0, 198, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-register {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 50px;
+            background: rgba(0, 198, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 198, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        /* Features Section */
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 198, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 198, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .feature-desc {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .feature-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .status-premium {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--purple);
+        }
+
+        .status-beta {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        /* Tool Injection Section */
+        .injection-section {
+            background: rgba(0, 198, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(0, 198, 255, 0.1);
+        }
+
+        .injection-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .injection-title i {
+            color: var(--primary);
+        }
+
+        .injection-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .control-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .control-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        .select-box {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(0, 198, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .select-box:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: #cbd5e1;
+        }
+
+        .checkbox-label input {
+            accent-color: var(--primary);
+        }
+
+        .injection-action {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn-inject {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-inject:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        .btn-inject:disabled {
+            background: #475569;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Status Panel */
+        .status-panel {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(0, 198, 255, 0.1);
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .status-title {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--danger);
+        }
+
+        .indicator-dot.active {
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .indicator-text {
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        .status-content {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: monospace;
+            min-height: 150px;
+            overflow-y: auto;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 2px solid transparent;
+        }
+
+        .log-entry.success {
+            border-left-color: var(--success);
+            color: var(--success);
+        }
+
+        .log-entry.error {
+            border-left-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .log-entry.info {
+            border-left-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 40px 30px;
+            border-top: 1px solid rgba(0, 198, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid rgba(0, 198, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            animation: modalAppear 0.3s ease;
+        }
+
+        @keyframes modalAppear {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        .modal-body {
+            margin-bottom: 25px;
+        }
+
+        .modal-body p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 30px 15px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-stats {
+                gap: 25px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .injection-section {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--primary), #0066cc);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="logo-text">CIT FF</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="#" class="nav-link active">Beranda</a>
+            <a href="#" class="nav-link">Fitur</a>
+            <a href="#" class="nav-link">Download</a>
+            <a href="#" class="nav-link">Panduan</a>
+            <a href="#" class="nav-link">FAQ</a>
+            <a href="#" class="nav-link">Kontak</a>
+        </div>
+        
+        <div class="user-actions">
+            <button class="btn btn-login" id="loginBtn">Login</button>
+            <button class="btn btn-register" id="registerBtn">Daftar</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section animate__animated animate__fadeIn">
+                <h1 class="hero-title">CIT FF - Cheat Injection Tool Free Fire</h1>
+                <p class="hero-subtitle">
+                    Tool injector cheat Free Fire paling canggih dengan fitur lengkap, anti-ban system, 
+                    dan kompatibilitas tinggi. Tingkatkan pengalaman gaming Anda dengan CIT FF.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Pengguna Aktif</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Update & Support</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0.01%</div>
+                        <div class="stat-label">Ban Rate</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2 class="section-title">Fitur Unggulan CIT FF</h2>
+                
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3 class="feature-title">Aimbot Auto Headshot</h3>
+                        <p class="feature-desc">
+                            Aimbot cerdas dengan akurasi 95% headshot otomatis. Dapat disesuaikan dengan sensitivitas yang diinginkan.
+                        </p>
+                        <span class="feature-status status-active">Aktif</span>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="feature-title">Wallhack & ESP</h3>
+                        <p class="feature-desc">
+                            Lihat musuh melalui tembok, tampilkan jarak, health bar, dan nama musuh. ESP lengkap untuk informasi maksimal.
+                        </p>
+                        <span class="feature-status status-premium">Premium</span>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Anti-Ban System</h3>
+                        <p class="feature-desc">
+                            Sistem keamanan canggih dengan enkripsi tingkat tinggi. Proteksi maksimal dari deteksi sistem Free Fire.
+                        </p>
+                        <span class="feature-status status-active">Aktif</span>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Speed Hack</h3>
+                        <p class="feature-desc">
+                            Tingkatkan kecepatan gerakan, lari lebih cepat, dan reload senjata dalam hitungan detik.
+                        </p>
+                        <span class="feature-status status-beta">Beta</span>
+                    </div>
+                    
+                    <!-- Feature 5 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-ninja"></i>
+                        </div>
+                        <h3 class="feature-title">No Recoil & No Spread</h3>
+                        <p class="feature-desc">
+                            Hilangkan recoil dan spread senjata. Tembakan selalu akurat bahkan dalam jarak jauh.
+                        </p>
+                        <span class="feature-status status-active">Aktif</span>
+                    </div>
+                    
+                    <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="feature-title">Skin Changer</h3>
+                        <p class="feature-desc">
+                            Ganti skin senjata dan karakter dengan skin premium tanpa perlu membeli. Koleksi lengkap skin langka.
+                        </p>
+                        <span class="feature-status status-premium">Premium</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool Injection Section -->
+            <section class="injection-section">
+                <h2 class="injection-title"><i class="fas fa-syringe"></i> CIT FF Injection Tool</h2>
+                
+                <div class="injection-controls">
+                    <div class="control-group">
+                        <label class="control-label">Pilih Versi Free Fire</label>
+                        <select class="select-box" id="ffVersion">
+                            <option value="latest">Free Fire Terbaru</option>
+                            <option value="advanced">Free Fire Advance Server</option>
+                            <option value="ob30">Free Fire OB30</option>
+                            <option value="ob29">Free Fire OB29</option>
+                            <option value="ob28">Free Fire OB28</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Mode Injection</label>
+                        <select class="select-box" id="injectionMode">
+                            <option value="safe">Safe Mode (Rekomendasi)</option>
+                            <option value="aggressive">Aggressive Mode</option>
+                            <option value="stealth">Stealth Mode</option>
+                            <option value="manual">Manual Injection</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">Pilih Fitur yang Diinginkan</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="feature" value="aimbot" checked>
+                            <span>Aimbot Auto Headshot</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="feature" value="wallhack">
+                            <span>Wallhack & ESP</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="feature" value="speed" checked>
+                            <span>Speed Hack</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="feature" value="norecoil">
+                            <span>No Recoil</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="feature" value="antiban" checked>
+                            <span>Anti-Ban System</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="feature" value="skin">
+                            <span>Skin Changer</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="injection-action">
+                    <button class="btn-inject" id="injectBtn">
+                        <i class="fas fa-play-circle"></i> Mulai Injection
+                    </button>
+                </div>
+            </section>
+
+            <!-- Status Panel -->
+            <section class="status-panel">
+                <div class="status-header">
+                    <h3 class="status-title">Status Injection</h3>
+                    <div class="status-indicator">
+                        <div class="indicator-dot" id="statusDot"></div>
+                        <span class="indicator-text" id="statusText">Siap</span>
+                    </div>
+                </div>
+                
+                <div class="status-content" id="statusLog">
+                    <div class="log-entry info">[SYSTEM] CIT FF v2.5.1 initialized</div>
+                    <div class="log-entry info">[SYSTEM] Scanning Free Fire installation...</div>
+                    <div class="log-entry success">[SUCCESS] Free Fire found: Version 1.98.1</div>
+                    <div class="log-entry info">[SYSTEM] Anti-ban system activated</div>
+                    <div class="log-entry info">[SYSTEM] Ready for injection process</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CIT FF</h3>
+                <p>Cheat Injection Tool Free Fire terbaik dengan teknologi terkini. Aman, stabil, dan selalu update.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Download Tool</a></li>
+                    <li><a href="#">Panduan Install</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Fitur</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Aimbot</a></li>
+                    <li><a href="#">Wallhack</a></li>
+                    <li><a href="#">Anti-Ban</a></li>
+                    <li><a href="#">Skin Changer</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 CIT FF - Cheat Injection Tool Free Fire. All rights reserved. | For educational purposes only.
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login CIT FF</h3>
+                <button class="close-modal" id="closeLoginModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Fitur login sedang dalam pengembangan. Untuk saat ini, Anda dapat menggunakan tool tanpa login.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Daftar CIT FF</h3>
+                <button class="close-modal" id="closeRegisterModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Pendaftaran akan segera dibuka. Pantau terus update kami di channel Discord dan Telegram.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Injection Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Injection Berhasil!</h3>
+                <button class="close-modal" id="closeSuccessModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Cheat berhasil diinject ke Free Fire. Silakan buka game dan nikmati fitur-fitur premium.</p>
+                <p><strong>Tips:</strong> Gunakan dengan bijak dan jangan terlalu mencolok untuk menghindari report.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const injectBtn = document.getElementById('injectBtn');
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const successModal = document.getElementById('successModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const closeRegisterModal = document.getElementById('closeRegisterModal');
+        const closeSuccessModal = document.getElementById('closeSuccessModal');
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const statusLog = document.getElementById('statusLog');
+        
+        // Navigation active state
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Modal handlers
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+        
+        registerBtn.addEventListener('click', () => {
+            registerModal.style.display = 'flex';
+        });
+        
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+        
+        closeRegisterModal.addEventListener('click', () => {
+            registerModal.style.display = 'none';
+        });
+        
+        closeSuccessModal.addEventListener('click', () => {
+            successModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) loginModal.style.display = 'none';
+            if (e.target === registerModal) registerModal.style.display = 'none';
+            if (e.target === successModal) successModal.style.display = 'none';
+        });
+        
+        // Injection process simulation
+        injectBtn.addEventListener('click', () => {
+            // Disable button and change status
+            injectBtn.disabled = true;
+            injectBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
+            
+            // Get selected options
+            const ffVersion = document.getElementById('ffVersion').value;
+            const injectionMode = document.getElementById('injectionMode').value;
+            const selectedFeatures = Array.from(document.querySelectorAll('input[name="feature"]:checked')).map(cb => cb.value);
+            
+            // Update status
+            statusDot.classList.remove('active');
+            statusText.textContent = 'Memproses...';
+            
+            // Clear log and add new entries
+            statusLog.innerHTML = '';
+            addLogEntry('Memulai proses injection...', 'info');
+            addLogEntry(`Target: Free Fire ${getVersionName(ffVersion)}`, 'info');
+            addLogEntry(`Mode: ${getModeName(injectionMode)}`, 'info');
+            addLogEntry(`Fitur: ${selectedFeatures.join(', ')}`, 'info');
+            
+            // Simulate injection process
+            setTimeout(() => {
+                addLogEntry('Menginisialisasi CIT engine...', 'info');
+                statusDot.style.background = 'var(--warning)';
+                
+                setTimeout(() => {
+                    addLogEntry('Memindai proses Free Fire...', 'info');
+                    
+                    setTimeout(() => {
+                        addLogEntry('Menginjeksi library cheat...', 'info');
+                        
+                        setTimeout(() => {
+                            addLogEntry('Mengaktifkan anti-ban system...', 'success');
+                            
+                            setTimeout(() => {
+                                // Inject each selected feature
+                                selectedFeatures.forEach((feature, index) => {
+                                    setTimeout(() => {
+                                        addLogEntry(`Mengaktifkan
